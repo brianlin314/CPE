@@ -1,12 +1,25 @@
 #include<iostream>
-#include<math.h>
 using namespace std;;
 int main()
 {
-    // int n;
-    float n;
+    int n;
     while(cin>>n)
     {
-        cout<<floor(1.5*n)<<endl;
+        int bottle = 0;
+        while(n>=3)
+        {
+            int tmp = n - (n % 3);
+            bottle += tmp;
+            n = (n / 3) + (n % 3);
+        }
+        if(n == 2)
+        {
+            bottle += 3;
+        }
+        else
+        {
+            bottle += 1;
+        }
+        cout<<bottle<<endl;
     }
 }
